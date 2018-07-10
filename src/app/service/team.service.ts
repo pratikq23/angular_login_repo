@@ -8,20 +8,27 @@ import 'rxjs/add/operator/finally';
 
 
 @Injectable()
-export class AboutService {
-  public  url = "http://localhost:3000/about";
+export class TeamService {
+  public  url = "http://localhost:3000/teamInfo";
     constructor( public http: Http) {
   }
 
   //login serivce
-  getAboutInfo(): Observable<any> {
-    // "appApiResources.login" is the constant string containing login api url 
+  getTeamInfo(): Observable<any> {
     return this.http.get(this.url)
     .map(this.extractData)
     .catch(this.handleError)
     .finally(() => {
     });
   }
+
+  updateTeam(teamObject): Observable<any> {
+    return this.http.post("http://localhost:3000/updateTeam",teamObject)
+    .map(this.extractData)
+    .catch(this.handleError)
+    .finally(() => {
+    });
+  } 
 
   private extractData(res: Response) {
     let body = res.json();  

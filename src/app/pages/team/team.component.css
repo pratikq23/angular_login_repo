@@ -91,3 +91,20 @@
     text-align: center;
     color: red;
   }
+
+
+.carddemoBasicUsage .card-media {
+  background-color: #999999; 
+}
+
+.inner-txt {
+  padding-left: 35px;
+}
+
+.card-contain {
+  padding-bottom: 25px;
+}
+
+.btn-edit {
+  float: right;
+}

@@ -4,12 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SimplChartsNgModule } from '@simpl/charts-ng';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MdButtonModule, MdCheckboxModule,MaterialModule } from '@angular/material';
 
 //common module
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
+import {  } from '@angular/material'
 import 'hammerjs';
 
 //component
@@ -25,6 +25,7 @@ import { TeamComponent } from './pages/team/team.component';
 import { LoginService } from './service/login.service';
 import { AuthGuard } from './service/auth.service';
 import { AboutService } from './service/about.service';
+import { TeamService } from './service/team.service';
 
 
 
@@ -38,6 +39,7 @@ import { AboutService } from './service/about.service';
     AboutComponent,
     TeamComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,11 +53,14 @@ import { AboutService } from './service/about.service';
     MdCheckboxModule,
     MdButtonModule
   ],
+
   providers: [ 
     LoginService,
     AuthGuard,
-    AboutService 
+    AboutService,
+    TeamService 
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { 

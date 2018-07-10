@@ -1,5 +1,11 @@
 <si-header></si-header>
 <h1 class= "title-txt">Team Performance</h1>
+<button clss="btn-edit"  (click) = "onEditClick()">Edit</button>
 
-
+<div class="card card-contain" *ngFor = "let teamDataObject of teamData;  let idx = index">	
+	<h5>Team Name: <span [hidden] = "!editable" class= "inner-txt">{{teamDataObject.name}}</span><span class= "inner-txt" [hidden] = "editable"><input type= "text" (ngModelChange)="onTeamChange($event,idx)" [(ngModel)]= "teamDataObject.name"></span></h5>
+	
+	<h5>Team Project: <span class= "inner-txt" [hidden] = "!editable">{{teamDataObject.project}}</span><span class= "inner-txt" [hidden] = "editable"><input type= "text" (ngModelChange)="onProjectChange($event,idx)" [(ngModel)]= "teamDataObject.project"></span></h5>
+</div>
+<canvas id="myChart" width="400" height="400"></canvas>
 <si-footer></si-footer>
