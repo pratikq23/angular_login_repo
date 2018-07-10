@@ -1,0 +1,15 @@
+<si-header></si-header>
+<h1 class= "title-txt">Team</h1>
+<div class="card" *ngFor = "let aboutObject of aboutList">
+    <div class="card-header" class="col-3">
+        <img src="https://www.w3schools.com/howto/img_avatar.png" class= "pic-dem">
+    </div>
+    <div class="col-9">
+        <h3 class="card-body name-txt">Name: {{aboutObject.name}}</h3>
+        <h5 class="card-body ">Mobile Number: {{aboutObject.number}}</h5>
+        <h5 class="card-body">Role: {{aboutObject.role}}</h5> 
+        <h5 class="card-body">Experience: {{aboutObject.experince}}</h5> 
+    </div>
+</div>
+
+<si-footer></si-footer>
